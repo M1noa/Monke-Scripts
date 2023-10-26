@@ -1,0 +1,10 @@
+https://greasyfork.org/scripts/5359-url-shortener-unshortener/code/URL%20Shortener%20Unshortener.user.js
+https://greasyfork.org/scripts/23772-absolute-enable-right-click-copy/code/Absolute%20Enable%20Right%20Click%20%20Copy.user.js
+https://adsbypasser.github.io/releases/adsbypasser.full.es7.user.js
+https://raw.githubusercontent.com/HandyUserscripts/AntiAdware/master/AntiAdware.user.js
+https://greasyfork.org/scripts/382482-assassinate-ad-block-blockers/code/Assassinate%20Ad%20Block%20Blockers.user.js
+https://greasyfork.org/scripts/465051-chatgpt-infinity/code/ChatGPT%20Infinity%20%E2%88%9E.user.js
+https://greasyfork.org/scripts/431691-bypass-all-shortlinks/code/Bypass%20All%20Shortlinks.user.js
+https://greasyfork.org/scripts/443888-additional-bypass/code/Additional%20Bypass.user.js
+https://greasyfork.org/scripts/381682-html5%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%A2%9E%E5%BC%BA%E8%84%9A%E6%9C%AC/code/HTML5%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%A2%9E%E5%BC%BA%E8%84%9A%E6%9C%AC.user.js
+https://greasyfork.org/scripts/456077-chatgpt-search/code/ChatGPT%20Search.user.js
