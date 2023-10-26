@@ -19,13 +19,13 @@
                 const sites = data.split('\n');
                 sites.forEach(site => {
                     if (site.trim() !== '') {
-                        window.open(site, '_blank');
+                        const newWindow = window.open('', '_blank');
+                        newWindow.location.href = site;
                     }
                 });
             })
             .catch(error => console.error(error));
     }
 </script>
-
 </body>
 </html>
