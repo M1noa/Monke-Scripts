@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Needed Scripts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Needed Scripts</h1>
+        <button class="install-button" onclick="openNewTabs()">Install</button>
+    </div>
+<script>
+    function openNewTabs() {
+        fetch('sites.txt')
+            .then(response => response.text())
+            .then(data => {
+                const sites = data.split('\n');
+                sites.forEach(site => {
+                    if (site.trim() !== '') {
+                        window.open(site, '_blank');
+                    }
+                });
+            })
+            .catch(error => console.error(error));
+    }
+</script>
+
+</body>
+</html>
