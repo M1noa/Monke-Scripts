@@ -11,3 +11,6 @@ https://greasyfork.org/scripts/456077-chatgpt-search/code/ChatGPT%20Search.user.
 https://github.com/reek/anti-adblock-killer/raw/master/anti-adblock-killer.user.js
 https://update.greasyfork.org/scripts/374794/Lift%20Web%20Restrictions%3A%20io%20Game%20Mods%20%28MooMooioKrunkerio%29%2C%20Ad%20Link%20Bypasser%2C%20Adblock%2C%20%20MORE%21.user.js
 https://update.greasyfork.org/scripts/477498/Youtube%20AdBlock%20ban%20bypass.user.js
+https://update.greasyfork.org/scripts/462440/BraveGPT%20%F0%9F%A4%96.user.js
+https://update.greasyfork.org/scripts/484297/Add%20Quality%20Score%20to%20CAI.user.js
+https://update.greasyfork.org/scripts/474130/Rizz%20Your%20Waifu.user.js
