@@ -1,4 +1,4 @@
-https://greasyfork.org/scripts/23772-absolute-enable-right-click-copy/code/Absolute%20Enable%20Right%20Click%20%20Copy.user.js
+https://update.greasyfork.org/scripts/460680/Youtube%20Tools%20All%20in%20one%20local%20download%20mp3%20mp4%20HIGT%20QUALITY%20return%20dislikes%20and%20more.user.js
 https://adsbypasser.github.io/releases/adsbypasser.full.es7.user.js
 https://raw.githubusercontent.com/HandyUserscripts/AntiAdware/master/AntiAdware.user.js
 https://greasyfork.org/scripts/382482-assassinate-ad-block-blockers/code/Assassinate%20Ad%20Block%20Blockers.user.js
@@ -12,3 +12,5 @@ https://update.greasyfork.org/scripts/477498/Youtube%20AdBlock%20ban%20bypass.us
 https://update.greasyfork.org/scripts/462440/BraveGPT%20%F0%9F%A4%96.user.js
 https://update.greasyfork.org/scripts/484297/Add%20Quality%20Score%20to%20CAI.user.js
 https://update.greasyfork.org/scripts/474130/Rizz%20Your%20Waifu.user.js
+https://update.greasyfork.org/scripts/423001/Twitter%20Media%20Downloader.user.js
+https://update.greasyfork.org/scripts/34613/YouTube%E2%84%A2%20Multi%20Downloader%20v86%20%28Relaunched%29%20%F0%9F%9A%80%F0%9F%92%AF%20-%20TubeMP3to%20%28NO%20ADS%20%20NEW%20LAYOUT%20FOR%20YT%21%20%F0%9F%9A%AB%F0%9F%A4%A9%29.user.js
