@@ -13,4 +13,3 @@ https://update.greasyfork.org/scripts/462440/BraveGPT%20%F0%9F%A4%96.user.js
 https://update.greasyfork.org/scripts/484297/Add%20Quality%20Score%20to%20CAI.user.js
 https://update.greasyfork.org/scripts/474130/Rizz%20Your%20Waifu.user.js
 https://update.greasyfork.org/scripts/423001/Twitter%20Media%20Downloader.user.js
-https://update.greasyfork.org/scripts/34613/YouTube%E2%84%A2%20Multi%20Downloader%20v86%20%28Relaunched%29%20%F0%9F%9A%80%F0%9F%92%AF%20-%20TubeMP3to%20%28NO%20ADS%20%20NEW%20LAYOUT%20FOR%20YT%21%20%F0%9F%9A%AB%F0%9F%A4%A9%29.user.js
