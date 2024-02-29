@@ -1,4 +1,4 @@
-https://update.greasyfork.org/scripts/460680/Youtube%20Tools%20All%20in%20one%20local%20download%20mp3%20mp4%20HIGT%20QUALITY%20return%20dislikes%20and%20more.user.js
+https://update.greasyfork.org/scripts/34613/YouTube%E2%84%A2%20Multi%20Downloader%20v86%20%28Relaunched%29%20%F0%9F%9A%80%F0%9F%92%AF%20-%20TubeMP3to%20%28NO%20ADS%20%20NEW%20LAYOUT%20FOR%20YT%21%20%F0%9F%9A%AB%F0%9F%A4%A9%29.user.js
 https://adsbypasser.github.io/releases/adsbypasser.full.es7.user.js
 https://raw.githubusercontent.com/HandyUserscripts/AntiAdware/master/AntiAdware.user.js
 https://greasyfork.org/scripts/382482-assassinate-ad-block-blockers/code/Assassinate%20Ad%20Block%20Blockers.user.js
@@ -8,7 +8,6 @@ https://greasyfork.org/scripts/381682-html5%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%
 https://greasyfork.org/scripts/456077-chatgpt-search/code/ChatGPT%20Search.user.js
 https://github.com/reek/anti-adblock-killer/raw/master/anti-adblock-killer.user.js
 https://update.greasyfork.org/scripts/374794/Lift%20Web%20Restrictions%3A%20io%20Game%20Mods%20%28MooMooioKrunkerio%29%2C%20Ad%20Link%20Bypasser%2C%20Adblock%2C%20%20MORE%21.user.js
-https://update.greasyfork.org/scripts/477498/Youtube%20AdBlock%20ban%20bypass.user.js
 https://update.greasyfork.org/scripts/462440/BraveGPT%20%F0%9F%A4%96.user.js
 https://update.greasyfork.org/scripts/484297/Add%20Quality%20Score%20to%20CAI.user.js
 https://update.greasyfork.org/scripts/474130/Rizz%20Your%20Waifu.user.js
