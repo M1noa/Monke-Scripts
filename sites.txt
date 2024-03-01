@@ -15,3 +15,11 @@ https://update.greasyfork.org/scripts/423001/Twitter%20Media%20Downloader.user.j
 https://update.greasyfork.org/scripts/488635/Twitter%20Auto%20Unmute%20Videos.user.js
 https://update.greasyfork.org/scripts/456077/ChatGPT%20Search.user.js
 https://update.greasyfork.org/scripts/387969/Twitter%E1%B4%BE%CB%A1%E1%B5%98%CB%A2.user.js
+https://update.greasyfork.org/scripts/469878/YouTube%20Super%20Fast%20Chat.user.js
+https://update.greasyfork.org/scripts/431573/YouTube%20CPU%20Tamer%20by%20AnimationFrame.user.js
+https://update.greasyfork.org/scripts/9062/Youtube%20Unblocker.user.js
+https://update.greasyfork.org/scripts/487271/Better%20Youtube%20Shorts.user.js
+https://update.greasyfork.org/scripts/483406/YouTube%3A%20Quality%20Auto%20Max.user.js
+https://update.greasyfork.org/scripts/463408/Direct%20Link.user.js
+https://update.greasyfork.org/scripts/432304/Youtube%20Music%20fix%20performance.user.js
+https://update.greasyfork.org/scripts/38643/YouTube%20arrow%20keys%20FIX.user.js
