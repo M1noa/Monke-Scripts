@@ -12,19 +12,20 @@
         <button class="install-button" onclick="openNewTabs()">Install</button>
     </div>
 <script>
-function openNewTabs() {
-    fetch('./sites.txt') // Fetch the file containing URLs
-    .then(response => response.text())
-    .then(text => {
-        const urls = text.split('\n').filter(url => url.trim() !== ''); // Split the text by new lines and remove empty lines
-        urls.forEach(url => {
-            window.open(url, '_blank'); // Open each URL in a new tab
-        });
-    })
-    .catch(error => {
-        console.error('Error reading sites.txt:', error);
-    });
-}
+    function openNewTabs() {
+        fetch('sites.txt')
+            .then(response => response.text())
+            .then(data => {
+                const sites = data.split('\n');
+                sites.forEach(site => {
+                    if (site.trim() !== '') {
+                        const newWindow = window.open('', '_blank');
+                        newWindow.location.href = site;
+                    }
+                });
+            })
+            .catch(error => console.error(error));
+    }
 </script>
 </body>
 </html>
