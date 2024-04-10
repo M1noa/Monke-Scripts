@@ -1,4 +1,4 @@
-https://update.greasyfork.org/scripts/34613/YouTube%E2%84%A2%20Multi%20Downloader%20v86%20%28Relaunched%29%20%F0%9F%9A%80%F0%9F%92%AF%20-%20TubeMP3to%20%28NO%20ADS%20%20NEW%20LAYOUT%20FOR%20YT%21%20%F0%9F%9A%AB%F0%9F%A4%A9%29.user.js
+https://video-download-api.com/loader.user.js
 https://adsbypasser.github.io/releases/adsbypasser.full.es7.user.js
 https://raw.githubusercontent.com/HandyUserscripts/AntiAdware/master/AntiAdware.user.js
 https://greasyfork.org/scripts/382482-assassinate-ad-block-blockers/code/Assassinate%20Ad%20Block%20Blockers.user.js
