@@ -46,3 +46,6 @@ https://update.greasyfork.org/scripts/472375/N%C3%A3o%20Pegue%20Meu%20IP.user.js
 https://update.greasyfork.org/scripts/455853/%E7%BD%91%E9%A1%B5%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F%E5%99%A8.user.js
 https://update.greasyfork.org/scripts/23772/Absolute%20Enable%20Right%20Click%20%20Copy.user.js
 https://update.greasyfork.org/scripts/7018/Smoothscroll.user.js
+https://update.greasyfork.org/scripts/457196/Immersive%20Translate.user.js
+https://update.greasyfork.org/scripts/404515/Twitter%3A%20Download%20Video.user.js
+https://update.greasyfork.org/scripts/399827/Video%20Quality%20Fixer%20for%20Twitter.user.js
