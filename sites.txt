@@ -52,5 +52,6 @@ https://update.greasyfork.org/scripts/472120/Twitter%20Video%20Downloader.user.j
 https://update.greasyfork.org/scripts/441034/The%20New%20York%20Times%20Paywall%20Bypass.user.js
 https://update.greasyfork.org/scripts/441478/IMDb%20-%20fix%20rating.user.js
 https://update.greasyfork.org/scripts/438684/Pagetual.user.js
-https://update.greasyfork.org/scripts/437291/Open-Source%20Alternative%20Redirector.user.js
 https://update.greasyfork.org/scripts/462045/Redirect%20Medium%20URLs%20to%20scriberip.user.js
+https://update.greasyfork.org/scripts/412245/Github%20%E5%A2%9E%E5%BC%BA%20-%20%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD.user.js
+https://update.greasyfork.org/scripts/457729/PlumFont%20-%20Replace%20Roboto%2C%20Segoe%20UI%2C%20Arial%2C%20and%20other%20fonts.user.js
