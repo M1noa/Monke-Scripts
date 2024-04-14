@@ -23,7 +23,6 @@ https://github.com/LegeBeker/bypass-paywalls-tampermonkey/raw/master/bypass-payw
 https://update.greasyfork.org/scripts/475314/Bypass%20Paywall.user.js
 https://update.greasyfork.org/scripts/483207/%5BWorking%5D%20loot-linkcom%20bypasser%20%28includes%20all%20lootlabsgg%20link%20variations%29.user.js
 https://update.greasyfork.org/scripts/439469/adLBypasser%20%5Bv16%5D%20%7C%7C%20OuoIo%2C%20UiiIo%2C%20ExeIo%2C%20BcVc%2C%20AdfLy%20%20More%20%E2%9C%94%20NO%20ADS.user.js
-https://update.greasyfork.org/scripts/427575/Selection%20and%20Copying%20Restorer%20%28Universal%29.user.js
 https://update.greasyfork.org/scripts/477900/Telegram%20Web%20-%20Allow%20Saving%20Content.user.js
 https://update.greasyfork.org/scripts/448728/MEGAnz%20Ultimately%20Import.user.js
 https://update.greasyfork.org/scripts/35521/Bypass%20paywalls%20for%20scientific%20documents.user.js
@@ -41,10 +40,8 @@ https://update.greasyfork.org/scripts/488635/Twitter%20Auto%20Unmute%20Videos.us
 https://update.greasyfork.org/scripts/451067/Modrinthify%20Spigot.user.js
 https://update.greasyfork.org/scripts/459997/chatGPT%20tools%20Plus%EF%BC%88%E4%BF%AE%E6%94%B9%E7%89%88%EF%BC%89.user.js
 https://update.greasyfork.org/scripts/473830/Greasy%20Fork%2B%2B.user.js
-https://update.greasyfork.org/scripts/469522/%F0%9F%8F%86%E8%B6%85%E6%98%9F%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%B9%9D%E4%B9%9D%E5%8A%A9%E6%89%8B%7C%E7%BB%A7%E7%BB%AD%E6%95%99%E8%82%B2%7C%E5%AD%A6%E9%93%B6%E5%9C%A8%E7%BA%BF%7C%E5%9B%BE%E7%89%87%E9%A2%98%7C%E8%80%83%E8%AF%95%7C%E5%90%8E%E5%8F%B0%E8%87%AA%E5%8A%A8%E6%8C%82%E6%9C%BA%7C%E8%A7%86%E9%A2%91%E6%96%87%E6%A1%A3%7C%E7%AB%A0%E8%8A%82%E6%B5%8B%E9%AA%8C%7C%E4%B8%8D%E5%8D%A0%E7%BD%91%E9%80%9F%F0%9F%8F%86.user.js
 https://update.greasyfork.org/scripts/472375/N%C3%A3o%20Pegue%20Meu%20IP.user.js
 https://update.greasyfork.org/scripts/455853/%E7%BD%91%E9%A1%B5%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F%E5%99%A8.user.js
-https://update.greasyfork.org/scripts/23772/Absolute%20Enable%20Right%20Click%20%20Copy.user.js
 https://update.greasyfork.org/scripts/7018/Smoothscroll.user.js
 https://update.greasyfork.org/scripts/457196/Immersive%20Translate.user.js
 https://update.greasyfork.org/scripts/399827/Video%20Quality%20Fixer%20for%20Twitter.user.js
