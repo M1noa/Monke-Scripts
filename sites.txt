@@ -60,3 +60,8 @@ https://update.greasyfork.org/scripts/462804/KeepChatGPT.user.js
 https://update.greasyfork.org/scripts/4900/KissAnime%20Anti-Adblock%20Blocker.user.js
 https://update.greasyfork.org/scripts/476065/Redirect%20to%20New%20Minecraft%20Wiki.user.js
 https://update.greasyfork.org/scripts/460300/Planet%20Minecraft%20Enhancer.user.js
+https://update.greasyfork.org/scripts/371186/Twitch%20-%20Mute%20ads%20and%20optionally%20hide%20them.user.js
+https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.user.js
+https://update.greasyfork.org/scripts/26323/%22TwitchPleb%22.user.js
+https://update.greasyfork.org/scripts/416704/Twitch%20Latency%20Overlay%20%28NON%20EMBEDDED%29.user.js
+https://update.greasyfork.org/scripts/375467/Enhance%20twitch.user.js
