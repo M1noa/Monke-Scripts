@@ -7,19 +7,20 @@
         <button class="install-button" onclick="openNewTabs()">Install</button>
     </div>
 <script>
-    function openNewTabs() {
-        fetch('sites.txt')
-            .then(response => response.text())
-            .then(data => {
-                const sites = data.split('\n');
-                sites.forEach(site => {
-                    if (site.trim() !== '') {
-                        const newWindow = window.open(site, '_blank');
-                        newWindow.location.href = site;
-                    }
-                });
-            })
-            .catch(error => console.error(error));
-    }
+function openNewTabs() {
+    fetch('sites.txt')
+        .then(response => response.text())
+        .then(data => {
+            const sites = data.split('\n');
+            sites.forEach((site, index) => {
+                if (site.trim() !== '') {
+                    setTimeout(() => {
+                        window.open(site, '_blank');
+                    }, index * 750); // 750 milliseconds delay
+                }
+            });
+        })
+        .catch(error => console.error(error));
+}
 </script>
 </body>
