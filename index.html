@@ -8,14 +8,14 @@
     </div>
 <script>
 function openNewTabs() {
-    fetch('sites.txt')
-        .then(response => response.text())
+    fetch('sites.json')
+        .then(response => response.json())
         .then(data => {
-            const sites = data.split('\n');
-            sites.forEach((site, index) => {
-                if (site.trim() !== '') {
+            const urls = data.urls;
+            urls.forEach((url, index) => {
+                if (url.trim() !== '') {
                     setTimeout(() => {
-                        window.open(site, '_blank');
+                        window.open(url, '_blank');
                     }, index * 1500); // 1.5 seconds delay
                 }
             });
