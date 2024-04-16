@@ -48,7 +48,9 @@ https://update.greasyfork.org/scripts/441034/The%20New%20York%20Times%20Paywall%
 https://update.greasyfork.org/scripts/441478/IMDb%20-%20fix%20rating.user.js
 https://update.greasyfork.org/scripts/438684/Pagetual.user.js
 https://update.greasyfork.org/scripts/462045/Redirect%20Medium%20URLs%20to%20scriberip.user.js
-https://update.greasyfork.org/scripts/412245/Github%20%E5%A2%9E%E5%BC%BA%20-%20%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD.user.js
+https://update.greasyfork.org/scripts/466101/Github%E8%AE%BF%E9%97%AE%E5%A2%9E%E5%BC%BA%20-%20%E9%AB%98%E9%80%9F%E6%B5%8F%E8%A7%88%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7.user.js
+https://update.greasyfork.org/scripts/411834/Download%20github%20repo%20sub-folder.user.js
+https://update.greasyfork.org/scripts/19773/GitHub%20Image%20Preview.user.js
 https://update.greasyfork.org/scripts/457729/PlumFont%20-%20Replace%20Roboto%2C%20Segoe%20UI%2C%20Arial%2C%20and%20other%20fonts.user.js
 https://update.greasyfork.org/scripts/445993/Modrinthify.user.js
 https://update.greasyfork.org/scripts/389255/Curseforge%20QOL%20Fixes.user.js
