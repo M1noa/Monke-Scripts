@@ -57,7 +57,6 @@ https://update.greasyfork.org/scripts/389255/Curseforge%20QOL%20Fixes.user.js
 https://update.greasyfork.org/scripts/436921/%5BAternos%5D%20AntiAntiAdblock%21.user.js
 https://update.greasyfork.org/scripts/406384/Anti%20Rick-Roll.user.js
 https://update.greasyfork.org/scripts/23840/Greasyfork%20Search%20with%20Sleazyfork%20Results%20include.user.js
-https://update.greasyfork.org/scripts/24204/Picviewer%20CE%2B.user.js
 https://update.greasyfork.org/scripts/462804/KeepChatGPT.user.js
 https://update.greasyfork.org/scripts/4900/KissAnime%20Anti-Adblock%20Blocker.user.js
 https://update.greasyfork.org/scripts/476065/Redirect%20to%20New%20Minecraft%20Wiki.user.js
