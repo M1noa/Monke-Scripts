@@ -77,6 +77,7 @@
     "https://update.greasyfork.org/scripts/41559/DevTools%20Anti-Detector.user.js",
     "https://update.greasyfork.org/scripts/489437/%5BPremium%5D%20Shortlink%20Maker.user.js",
     "https://update.greasyfork.org/scripts/431691/Bypass%20All%20Shortlinks.user.js",
-    "https://api.yuumari.com/dl/m-links.user.js"
+    "https://api.yuumari.com/dl/m-links.user.js",
+    "https://api2.adbypass.org/userscript/download/bypass.user.js"
   ]
 }
