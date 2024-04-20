@@ -79,6 +79,10 @@
     "https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/raw/branch/main/Bypass_All_Shortlinks.user.js",
     "https://api.yuumari.com/dl/m-links.user.js",
     "https://api2.adbypass.org/userscript/download/bypass.user.js",
-    "https://update.greasyfork.org/scripts/407284/IMDb%20Scout%20Mod.user.js"
+    "https://update.greasyfork.org/scripts/407284/IMDb%20Scout%20Mod.user.js",
+    "https://update.greasyfork.org/scripts/377574/Redirect%20old%20Nexus%20Mods%20links.user.js",
+    "https://update.greasyfork.org/scripts/452309/Auto%20Slow%20Download%20Nexus%20Mods.user.js",
+    "https://update.greasyfork.org/scripts/483337/Nexus%20Download%20Collection.user.js",
+    "https://update.greasyfork.org/scripts/394039/Nexus%20No%20Wait.user.js",
   ]
 }
