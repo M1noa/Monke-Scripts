@@ -85,6 +85,10 @@
     "https://update.greasyfork.org/scripts/483337/Nexus%20Download%20Collection.user.js",
     "https://update.greasyfork.org/scripts/394039/Nexus%20No%20Wait.user.js",
     "https://update.greasyfork.org/scripts/430354/Cloudflare%20DNS%20replacer.user.js",
-    "https://update.greasyfork.org/scripts/443277/Bypass%20Pahe%20Links.user.js"
+    "https://update.greasyfork.org/scripts/443277/Bypass%20Pahe%20Links.user.js",
+    "https://update.greasyfork.org/scripts/447607/MOREtrackers.user.js",
+    "https://update.greasyfork.org/scripts/33379/1337x%20-%20Torrent%20page%20improvements.user.js",
+    "https://update.greasyfork.org/scripts/31708/Nyaa%20SI%20Extreme.user.js",
+    "https://update.greasyfork.org/scripts/493645/Magnet%20Links%20on%20YTS.user.js"
   ]
 }
