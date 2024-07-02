@@ -103,6 +103,7 @@
     "https://update.greasyfork.org/scripts/27643/Netflix%20Seek%20Without%20Pause.user.js",
     "https://update.greasyfork.org/scripts/439247/netfix.user.js",
     "https://update.greasyfork.org/scripts/371328/Mute%20Netflix%20Autoplay%20Trailers.user.js",
-    "https://update.greasyfork.org/scripts/420603/Netflix%20keyboard%20shortcuts.user.js"
+    "https://update.greasyfork.org/scripts/420603/Netflix%20keyboard%20shortcuts.user.js",
+    "https://greasyfork.org/scripts/440199-dismiss-cookies-warning/code/script.user.js"
   ]
 }
