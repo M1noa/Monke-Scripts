@@ -7,21 +7,81 @@
         <button class="install-button" onclick="openNewTabs()">Install</button>
         <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
-<script>
-function openNewTabs() {
-    fetch('sites.json')
-        .then(response => response.json())
-        .then(data => {
-            const urls = data.urls;
-            urls.forEach((url, index) => {
-                if (url.trim() !== '') {
-                    setTimeout(() => {
+    <script>
+        let urls = [];
+        let currentIndex = 0;
+        let tabOpened = false;
+
+        function openNewTabs() {
+            fetch('sites.json')
+                .then(response => response.json())
+                .then(data => {
+                    urls = data.urls.filter(url => url.trim() !== '');
+                    openNextTab();
+                })
+                .catch(error => console.error(error));
+        }
+
+        function openNextTab() {
+            if (currentIndex < urls.length) {
+                const url = urls[currentIndex];
+                currentIndex++;
+                checkTampermonkeyInstallation(url);
+            }
+        }
+
+        function checkTampermonkeyInstallation(url) {
+            waitForExternalTm(function(tm) {
+                const scriptName = extractScriptName(url); // Function to extract script name from URL
+                const scriptNamespace = extractScriptNamespace(url); // Function to extract namespace from URL
+                
+                tm.isInstalled(scriptName, scriptNamespace, function(result) {
+                    if (!result.installed) {
                         window.open(url, "_blank");
-                    }, index * 3500);
-                }
+                        tabOpened = true;
+                    } else {
+                        tabOpened = false;
+                        openNextTab();
+                    }
+                });
             });
-        })
-        .catch(error => console.error(error));
-}
-</script>
+        }
+
+        function extractScriptName(url) {
+            // Example function to extract script name from URL
+            // Modify this function based on how script names are included in your URLs
+            return url.split('/').pop().split('?')[0];
+        }
+
+        function extractScriptNamespace(url) {
+            // Example function to extract script namespace from URL
+            // Modify this function based on how namespaces are included in your URLs
+            const urlObj = new URL(url);
+            return urlObj.origin;
+        }
+
+        function waitForExternalTm(cb) {
+            let external, tm;
+            if (!(external = window.external)) {
+                return false;
+            } else {
+                if ((tm = external.Tampermonkey)) {
+                    cb(tm);
+                } else {
+                    window.setTimeout(function() {
+                        if ((tm = external.Tampermonkey)) {
+                            cb(tm);
+                        }
+                    }, 1000);
+                }
+            }
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible' && tabOpened) {
+                openNextTab();
+                tabOpened = false;
+            }
+        });
+    </script>
 </body>
