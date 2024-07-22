@@ -118,6 +118,9 @@
     "https://update.greasyfork.org/scripts/377523/Ratings%20on%20Trakt.user.js",
     "https://update.greasyfork.org/scripts/441404/External%20links%20on%20Trakt.user.js",
     "https://update.greasyfork.org/scripts/34462/trakttv%20with%20tmdb%20rating.user.js",
-    "https://update.greasyfork.org/scripts/501302/Earnlink%20Bypass.user.js"
+    "https://update.greasyfork.org/scripts/501302/Earnlink%20Bypass.user.js",
+    "https://update.greasyfork.org/scripts/466789/ChatGPT%20Auto-Continue%20%E2%8F%A9.user.js",
+    "https://update.greasyfork.org/scripts/456055/ChatGPT%20Exporter.user.js",
+    "https://update.greasyfork.org/scripts/486977/%F0%9F%8C%BA%20Clean%20ChatGPT.user.js"
   ]
 }
