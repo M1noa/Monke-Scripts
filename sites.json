@@ -9,7 +9,7 @@
     "https://github.com/reek/anti-adblock-killer/raw/master/anti-adblock-killer.user.js",
     "https://update.greasyfork.org/scripts/374794/Lift%20Web%20Restrictions%3A%20io%20Game%20Mods%20%28MooMooioKrunkerio%29%2C%20Ad%20Link%20Bypasser%2C%20Adblock%2C%20%20MORE%21.user.js",
     "https://update.greasyfork.org/scripts/484297/Add%20Quality%20Score%20to%20CAI.user.js",
-    "https://update.greasyfork.org/scripts/474130/Rizz%20Your%20Waifu.user.js",
+    "https://update.greasyfork.org/scripts/500221/%28reupload%29%20slash%27s%20mod%20menu.user.js",
     "https://update.greasyfork.org/scripts/423001/Twitter%20Media%20Downloader.user.js",
     "https://update.greasyfork.org/scripts/456077/ChatGPT%20Search.user.js",
     "https://update.greasyfork.org/scripts/437359/Twitter%20hide%20content%20warning%20crap.user.js",
@@ -51,7 +51,7 @@
     "https://update.greasyfork.org/scripts/412245/Github%20%E5%A2%9E%E5%BC%BA%20-%20%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD.user.js",
     "https://update.greasyfork.org/scripts/411834/Download%20github%20repo%20sub-folder.user.js",
     "https://update.greasyfork.org/scripts/19773/GitHub%20Image%20Preview.user.js",
-    "https://update.greasyfork.org/scripts/457729/PlumFont%20-%20Replace%20Roboto%2C%20Segoe%20UI%2C%20Arial%2C%20and%20other%20fonts.user.js",
+    "https://update.greasyfork.org/scripts/499045/Enhanced%20CharacterAI%20Text%20Color%20and%20Font.user.js",
     "https://update.greasyfork.org/scripts/445993/Modrinthify.user.js",
     "https://update.greasyfork.org/scripts/389255/Curseforge%20QOL%20Fixes.user.js",
     "https://update.greasyfork.org/scripts/436921/%5BAternos%5D%20AntiAntiAdblock%21.user.js",
@@ -122,6 +122,13 @@
     "https://update.greasyfork.org/scripts/466789/ChatGPT%20Auto-Continue%20%E2%8F%A9.user.js",
     "https://update.greasyfork.org/scripts/456055/ChatGPT%20Exporter.user.js",
     "https://update.greasyfork.org/scripts/486977/%F0%9F%8C%BA%20Clean%20ChatGPT.user.js",
-    "https://update.greasyfork.org/scripts/491501/cai%20X%20Character%20Creation%20Helper.user.js"
+    "https://update.greasyfork.org/scripts/491501/cai%20X%20Character%20Creation%20Helper.user.js",
+    "https://update.greasyfork.org/scripts/490682/Download%20characterai%20chat.user.js",
+    "https://update.greasyfork.org/scripts/468233/CAI%20Token.user.js",
+    "https://update.greasyfork.org/scripts/459148/Replies%20numbering%20and%20%22bookmarking%22%20at%20characterai.user.js",
+    "https://update.greasyfork.org/scripts/468739/WideScreen%20Chat.user.js",
+    "https://update.greasyfork.org/scripts/462589/CAI%20Unlisted%20Interactions.user.js",
+    "https://update.greasyfork.org/scripts/458400/Reload%20%20autoscroll%20buttons%20at%20characterai.user.js",
+    "https://update.greasyfork.org/scripts/498701/Characterai%20Enhancements.user.js"
   ]
 }
