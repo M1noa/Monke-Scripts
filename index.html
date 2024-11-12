@@ -4,61 +4,80 @@
 <body>
     <div class="container">
         <h1 class="header">Needed Scripts</h1>
-        <select id="mediaTypeSelect" onchange="filterUrls()">
+        
+        <!-- Genre selection dropdown -->
+        <select id="genreSelect" onchange="updateLinks()">
             <option value="all">All</option>
+            <!-- Genres will be dynamically populated here -->
         </select>
+
         <button class="install-button" onclick="openNewTabs()">Install</button>
         <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
+
     <script>
         let urls = [];
-        let filteredUrls = [];
         let currentIndex = 0;
         let tabOpened = false;
+        let genres = [];
 
-        // Load and populate media types from the JSON
-        function populateMediaTypes(data) {
-            const mediaTypes = new Set();
-            data.urls.forEach(item => {
-                mediaTypes.add(item.type);
-            });
-
-            const selectElement = document.getElementById('mediaTypeSelect');
-            mediaTypes.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type;
-                option.textContent = type;
-                selectElement.appendChild(option);
-            });
-        }
-
-        function openNewTabs() {
+        // Fetch all genres and URLs
+        function fetchSites() {
             console.log('Fetching sites.json...');
             fetch('sites.json')
                 .then(response => response.json())
                 .then(data => {
                     console.log('Sites data:', data);
-                    urls = data.urls;
-                    populateMediaTypes(data);
-                    filterUrls();
+                    genres = Object.keys(data);  // Get all genre keys
+                    populateGenres(genres); // Populate dropdown
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
 
-        function filterUrls() {
-            const selectedType = document.getElementById('mediaTypeSelect').value;
-            filteredUrls = selectedType === 'all' 
-                ? urls 
-                : urls.filter(item => item.type === selectedType);
+        // Populate genre dropdown
+        function populateGenres(genres) {
+            const genreSelect = document.getElementById("genreSelect");
+            genres.forEach(genre => {
+                const option = document.createElement("option");
+                option.value = genre;
+                option.textContent = genre.replace(/_/g, ' ').toUpperCase(); // Capitalize genres
+                genreSelect.appendChild(option);
+            });
+        }
 
-            console.log('Filtered URLs:', filteredUrls);
-            currentIndex = 0;
+        // Update URLs based on selected genre
+        function updateLinks() {
+            const selectedGenre = document.getElementById("genreSelect").value;
+            console.log(`Selected genre: ${selectedGenre}`);
+            fetch('sites.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (selectedGenre === 'all') {
+                        // Fetch all URLs if 'All' is selected
+                        urls = Object.values(data).flat();
+                    } else {
+                        // Fetch URLs for the selected genre
+                        urls = data[selectedGenre] || [];
+                    }
+                    console.log('Filtered URLs:', urls);
+                    currentIndex = 0; // Reset index
+                })
+                .catch(error => console.error('Error fetching sites.json:', error));
+        }
+
+        // Open URLs in new tabs
+        function openNewTabs() {
+            if (urls.length === 0) {
+                console.log('No URLs to open.');
+                return;
+            }
             openNextTab();
         }
 
+        // Open the next URL
         function openNextTab() {
-            if (currentIndex < filteredUrls.length) {
-                const url = filteredUrls[currentIndex].url;
+            if (currentIndex < urls.length) {
+                const url = urls[currentIndex];
                 console.log(`Processing URL: ${url}`);
                 currentIndex++;
                 if (isTampermonkeyLink(url)) {
@@ -127,11 +146,25 @@
                             console.log('Tampermonkey found on retry.');
                             cb(tm);
                         } else {
-                            console.log('Tampermonkey still not found after retry.');
+                            console.log('Tampermonkey not found after retry.');
+                            tabOpened = false;
+                            openNextTab();
                         }
                     }, 1000);
                 }
             }
         }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible' && tabOpened) {
+                console.log('Tab is visible again, opening next URL...');
+                openNextTab();
+                tabOpened = false;
+            }
+        });
+
+        // Fetch the genres and sites when the page loads
+        window.onload = fetchSites;
+
     </script>
 </body>
