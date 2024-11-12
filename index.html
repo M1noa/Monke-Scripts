@@ -4,12 +4,9 @@
 <body>
     <div class="container">
         <h1 class="header">Needed Scripts</h1>
-        <div id="media-type-selector">
-            <label for="media-types">Select Media Type:</label>
-            <select id="media-types" onchange="filterUrlsByType()">
-                <option value="all">All</option>
-            </select>
-        </div>
+        <select id="mediaTypeSelect" onchange="filterUrls()">
+            <option value="all">All</option>
+        </select>
         <button class="install-button" onclick="openNewTabs()">Install</button>
         <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
@@ -19,63 +16,57 @@
         let currentIndex = 0;
         let tabOpened = false;
 
-        function openNewTabs() {
-            currentIndex = 0;
-            if (filteredUrls.length === 0) {
-                console.log('No URLs found for the selected media type.');
-                return;
-            }
-            console.log('Opening filtered URLs...');
-            openNextTab();
+        // Load and populate media types from the JSON
+        function populateMediaTypes(data) {
+            const mediaTypes = new Set();
+            data.urls.forEach(item => {
+                mediaTypes.add(item.type);
+            });
+
+            const selectElement = document.getElementById('mediaTypeSelect');
+            mediaTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                selectElement.appendChild(option);
+            });
         }
 
-        function fetchSitesJson() {
+        function openNewTabs() {
             console.log('Fetching sites.json...');
             fetch('sites.json')
                 .then(response => response.json())
                 .then(data => {
                     console.log('Sites data:', data);
-                    urls = data.urls.filter(url => url.trim() !== '');
-                    populateMediaTypes(data.urls);
+                    urls = data.urls;
+                    populateMediaTypes(data);
+                    filterUrls();
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
 
-        function populateMediaTypes(urls) {
-            const mediaTypes = new Set();
-            urls.forEach(urlObj => {
-                if (urlObj.type) {
-                    mediaTypes.add(urlObj.type);
-                }
-            });
-            const mediaTypesDropdown = document.getElementById('media-types');
-            mediaTypes.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type;
-                option.textContent = type;
-                mediaTypesDropdown.appendChild(option);
-            });
-        }
+        function filterUrls() {
+            const selectedType = document.getElementById('mediaTypeSelect').value;
+            filteredUrls = selectedType === 'all' 
+                ? urls 
+                : urls.filter(item => item.type === selectedType);
 
-        function filterUrlsByType() {
-            const selectedType = document.getElementById('media-types').value;
-            filteredUrls = selectedType === 'all'
-                ? urls
-                : urls.filter(urlObj => urlObj.type === selectedType);
             console.log('Filtered URLs:', filteredUrls);
+            currentIndex = 0;
+            openNextTab();
         }
 
         function openNextTab() {
             if (currentIndex < filteredUrls.length) {
-                const urlObj = filteredUrls[currentIndex];
-                console.log(`Processing URL: ${urlObj.url}`);
+                const url = filteredUrls[currentIndex].url;
+                console.log(`Processing URL: ${url}`);
                 currentIndex++;
-                if (isTampermonkeyLink(urlObj.url)) {
-                    console.log(`Checking Tampermonkey installation for URL: ${urlObj.url}`);
-                    checkTampermonkeyInstallation(urlObj.url);
+                if (isTampermonkeyLink(url)) {
+                    console.log(`Checking Tampermonkey installation for URL: ${url}`);
+                    checkTampermonkeyInstallation(url);
                 } else {
-                    console.log(`URL is not a Tampermonkey link. Opening: ${urlObj.url}`);
-                    window.open(urlObj.url, "_blank");
+                    console.log(`URL is not a Tampermonkey link. Opening: ${url}`);
+                    window.open(url, "_blank");
                     tabOpened = true;
                 }
             } else {
@@ -85,9 +76,9 @@
 
         function checkTampermonkeyInstallation(url) {
             waitForExternalTm(function(tm) {
-                const scriptName = extractScriptName(url);
-                const scriptNamespace = extractScriptNamespace(url);
-
+                const scriptName = extractScriptName(url); 
+                const scriptNamespace = extractScriptNamespace(url); 
+                
                 console.log(`Checking if script "${scriptName}" from "${scriptNamespace}" is installed...`);
                 tm.isInstalled(scriptName, scriptNamespace, function(result) {
                     if (result.installed) {
@@ -136,13 +127,11 @@
                             console.log('Tampermonkey found on retry.');
                             cb(tm);
                         } else {
-                            console.log('Tampermonkey still not found.');
+                            console.log('Tampermonkey still not found after retry.');
                         }
-                    }, 500);
+                    }, 1000);
                 }
             }
         }
-
-        document.addEventListener('DOMContentLoaded', fetchSitesJson);
     </script>
 </body>
