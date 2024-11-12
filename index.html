@@ -4,54 +4,65 @@
 <body>
     <div class="container">
         <h1 class="header">Needed Scripts</h1>
-        <label for="media-type">Select Media Type:</label>
-        <select id="media-type" onchange="updateSelectedMediaType()">
-            <option value="all">All</option>
-        </select>
-        <button class="install-button" onclick="openNewTabs()">Install</button>
-        <p>Go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
+        <button class="install-button" onclick="fetchMediaTypes()">Install</button>
+        <select id="mediaTypeSelector"></select>
+        <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
     <script>
         let urls = [];
         let currentIndex = 0;
-        let selectedMediaType = 'all';
+        let tabOpened = false;
 
-        function updateSelectedMediaType() {
-            const mediaTypeSelect = document.getElementById('media-type');
-            selectedMediaType = mediaTypeSelect.value;
-            console.log('Selected media type:', selectedMediaType);
-        }
-
-        function openNewTabs() {
+        function fetchMediaTypes() {
             console.log('Fetching sites.json...');
             fetch('sites.json')
                 .then(response => response.json())
                 .then(data => {
                     console.log('Sites data:', data);
                     const mediaTypes = new Set();
-
                     data.urls.forEach(item => {
                         if (item.type) {
                             mediaTypes.add(item.type);
                         }
                     });
 
-                    const mediaTypeSelect = document.getElementById('media-type');
+                    const mediaTypeSelector = document.getElementById('mediaTypeSelector');
+                    mediaTypeSelector.innerHTML = '';
+
+                    const allOption = document.createElement('option');
+                    allOption.value = 'all';
+                    allOption.textContent = 'All';
+                    mediaTypeSelector.appendChild(allOption);
+
                     mediaTypes.forEach(type => {
                         const option = document.createElement('option');
                         option.value = type;
                         option.textContent = type;
-                        mediaTypeSelect.appendChild(option);
+                        mediaTypeSelector.appendChild(option);
                     });
 
-                    urls = data.urls.filter(item => 
-                        selectedMediaType === 'all' || item.type === selectedMediaType
-                    ).map(item => item.url);
+                    mediaTypeSelector.addEventListener('change', () => {
+                        filterUrls(data, mediaTypeSelector.value);
+                    });
 
-                    console.log('Filtered URLs:', urls);
-                    openNextTab();
+                    // Default to 'All'
+                    filterUrls(data, 'all');
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
+        }
+
+        function filterUrls(data, selectedType) {
+            if (selectedType === 'all') {
+                urls = data.urls.map(item => item.url).filter(url => url.trim() !== '');
+            } else {
+                urls = data.urls
+                    .filter(item => item.type === selectedType)
+                    .map(item => item.url)
+                    .filter(url => url.trim() !== '');
+            }
+            console.log('Filtered URLs:', urls);
+            currentIndex = 0;
+            openNextTab();
         }
 
         function openNextTab() {
@@ -65,6 +76,7 @@
                 } else {
                     console.log(`URL is not a Tampermonkey link. Opening: ${url}`);
                     window.open(url, "_blank");
+                    tabOpened = true;
                 }
             } else {
                 console.log('All URLs processed.');
@@ -80,10 +92,12 @@
                 tm.isInstalled(scriptName, scriptNamespace, function(result) {
                     if (result.installed) {
                         console.log(`Script "${scriptName}" is already installed.`);
+                        tabOpened = false;
                         openNextTab();
                     } else {
                         console.log(`Script "${scriptName}" is not installed. Opening URL: ${url}`);
                         window.open(url, "_blank");
+                        tabOpened = true;
                     }
                 });
             });
@@ -123,6 +137,7 @@
                             cb(tm);
                         } else {
                             console.log('Tampermonkey not found after retry.');
+                            tabOpened = false;
                             openNextTab();
                         }
                     }, 1000);
