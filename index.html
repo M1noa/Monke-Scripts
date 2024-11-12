@@ -4,13 +4,23 @@
 <body>
     <div class="container">
         <h1 class="header">Needed Scripts</h1>
+        <label for="media-type">Select Media Type:</label>
+        <select id="media-type" onchange="updateSelectedMediaType()">
+            <option value="all">All</option>
+        </select>
         <button class="install-button" onclick="openNewTabs()">Install</button>
-        <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
+        <p>Go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
     <script>
         let urls = [];
         let currentIndex = 0;
-        let tabOpened = false;
+        let selectedMediaType = 'all';
+
+        function updateSelectedMediaType() {
+            const mediaTypeSelect = document.getElementById('media-type');
+            selectedMediaType = mediaTypeSelect.value;
+            console.log('Selected media type:', selectedMediaType);
+        }
 
         function openNewTabs() {
             console.log('Fetching sites.json...');
@@ -18,7 +28,26 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log('Sites data:', data);
-                    urls = data.urls.filter(url => url.trim() !== '');
+                    const mediaTypes = new Set();
+
+                    data.urls.forEach(item => {
+                        if (item.type) {
+                            mediaTypes.add(item.type);
+                        }
+                    });
+
+                    const mediaTypeSelect = document.getElementById('media-type');
+                    mediaTypes.forEach(type => {
+                        const option = document.createElement('option');
+                        option.value = type;
+                        option.textContent = type;
+                        mediaTypeSelect.appendChild(option);
+                    });
+
+                    urls = data.urls.filter(item => 
+                        selectedMediaType === 'all' || item.type === selectedMediaType
+                    ).map(item => item.url);
+
                     console.log('Filtered URLs:', urls);
                     openNextTab();
                 })
@@ -36,7 +65,6 @@
                 } else {
                     console.log(`URL is not a Tampermonkey link. Opening: ${url}`);
                     window.open(url, "_blank");
-                    tabOpened = true;
                 }
             } else {
                 console.log('All URLs processed.');
@@ -52,12 +80,10 @@
                 tm.isInstalled(scriptName, scriptNamespace, function(result) {
                     if (result.installed) {
                         console.log(`Script "${scriptName}" is already installed.`);
-                        tabOpened = false;
                         openNextTab();
                     } else {
                         console.log(`Script "${scriptName}" is not installed. Opening URL: ${url}`);
                         window.open(url, "_blank");
-                        tabOpened = true;
                     }
                 });
             });
@@ -97,20 +123,11 @@
                             cb(tm);
                         } else {
                             console.log('Tampermonkey not found after retry.');
-                            tabOpened = false;
                             openNextTab();
                         }
                     }, 1000);
                 }
             }
         }
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'visible' && tabOpened) {
-                console.log('Tab is visible again, opening next URL...');
-                openNextTab();
-                tabOpened = false;
-            }
-        });
     </script>
 </body>
