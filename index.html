@@ -9,140 +9,53 @@
         <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
     <script>
-        let urls = [];
-        let currentIndex = 0;
-        let tabOpened = false;
+function fetchMediaTypes() {
+    console.log('Fetching sites.json...');
+    fetch('sites.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Sites data:', data);
 
-        function fetchMediaTypes() {
-            console.log('Fetching sites.json...');
-            fetch('sites.json')
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Sites data:', data);
-                    const mediaTypes = new Set();
-                    data.urls.forEach(item => {
-                        if (item.type) {
-                            mediaTypes.add(item.type);
-                        }
-                    });
+            // Get all unique types (keys) from the JSON
+            const mediaTypes = Object.keys(data);
+            const mediaTypeSelector = document.getElementById('mediaTypeSelector');
+            mediaTypeSelector.innerHTML = '';
 
-                    const mediaTypeSelector = document.getElementById('mediaTypeSelector');
-                    mediaTypeSelector.innerHTML = '';
+            // Add an "All" option
+            const allOption = document.createElement('option');
+            allOption.value = 'all';
+            allOption.textContent = 'All';
+            mediaTypeSelector.appendChild(allOption);
 
-                    const allOption = document.createElement('option');
-                    allOption.value = 'all';
-                    allOption.textContent = 'All';
-                    mediaTypeSelector.appendChild(allOption);
-
-                    mediaTypes.forEach(type => {
-                        const option = document.createElement('option');
-                        option.value = type;
-                        option.textContent = type;
-                        mediaTypeSelector.appendChild(option);
-                    });
-
-                    mediaTypeSelector.addEventListener('change', () => {
-                        filterUrls(data, mediaTypeSelector.value);
-                    });
-
-                    // Default to 'All'
-                    filterUrls(data, 'all');
-                })
-                .catch(error => console.error('Error fetching sites.json:', error));
-        }
-
-        function filterUrls(data, selectedType) {
-            if (selectedType === 'all') {
-                urls = data.urls.map(item => item.url).filter(url => url.trim() !== '');
-            } else {
-                urls = data.urls
-                    .filter(item => item.type === selectedType)
-                    .map(item => item.url)
-                    .filter(url => url.trim() !== '');
-            }
-            console.log('Filtered URLs:', urls);
-            currentIndex = 0;
-            openNextTab();
-        }
-
-        function openNextTab() {
-            if (currentIndex < urls.length) {
-                const url = urls[currentIndex];
-                console.log(`Processing URL: ${url}`);
-                currentIndex++;
-                if (isTampermonkeyLink(url)) {
-                    console.log(`Checking Tampermonkey installation for URL: ${url}`);
-                    checkTampermonkeyInstallation(url);
-                } else {
-                    console.log(`URL is not a Tampermonkey link. Opening: ${url}`);
-                    window.open(url, "_blank");
-                    tabOpened = true;
-                }
-            } else {
-                console.log('All URLs processed.');
-            }
-        }
-
-        function checkTampermonkeyInstallation(url) {
-            waitForExternalTm(function(tm) {
-                const scriptName = extractScriptName(url); 
-                const scriptNamespace = extractScriptNamespace(url); 
-                
-                console.log(`Checking if script "${scriptName}" from "${scriptNamespace}" is installed...`);
-                tm.isInstalled(scriptName, scriptNamespace, function(result) {
-                    if (result.installed) {
-                        console.log(`Script "${scriptName}" is already installed.`);
-                        tabOpened = false;
-                        openNextTab();
-                    } else {
-                        console.log(`Script "${scriptName}" is not installed. Opening URL: ${url}`);
-                        window.open(url, "_blank");
-                        tabOpened = true;
-                    }
-                });
+            // Populate the dropdown with media types
+            mediaTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                mediaTypeSelector.appendChild(option);
             });
-        }
 
-        function isTampermonkeyLink(url) {
-            const tampermonkeyDomains = ['tampermonkey.net', 'greasyfork.org', 'openuserjs.org'];
-            return tampermonkeyDomains.some(domain => url.includes(domain));
-        }
+            mediaTypeSelector.addEventListener('change', () => {
+                filterUrls(data, mediaTypeSelector.value);
+            });
 
-        function extractScriptName(url) {
-            const urlObj = new URL(url);
-            const pathSegments = urlObj.pathname.split('/');
-            const scriptName = pathSegments[pathSegments.length - 1];
-            return scriptName.split('?')[0];
-        }
+            // Default to 'All'
+            filterUrls(data, 'all');
+        })
+        .catch(error => console.error('Error fetching sites.json:', error));
+}
 
-        function extractScriptNamespace(url) {
-            const urlObj = new URL(url);
-            return urlObj.origin;
-        }
-
-        function waitForExternalTm(cb) {
-            let external, tm;
-            if (!(external = window.external)) {
-                console.log('Tampermonkey not found in window.external.');
-                return false;
-            } else {
-                if ((tm = external.Tampermonkey)) {
-                    console.log('Tampermonkey found.');
-                    cb(tm);
-                } else {
-                    console.log('Tampermonkey not immediately available, retrying...');
-                    window.setTimeout(function() {
-                        if ((tm = external.Tampermonkey)) {
-                            console.log('Tampermonkey found on retry.');
-                            cb(tm);
-                        } else {
-                            console.log('Tampermonkey not found after retry.');
-                            tabOpened = false;
-                            openNextTab();
-                        }
-                    }, 1000);
-                }
-            }
-        }
+function filterUrls(data, selectedType) {
+    if (selectedType === 'all') {
+        // Collect URLs from all categories
+        urls = Object.values(data).flat().filter(url => url.trim() !== '');
+    } else {
+        // Collect URLs from the selected category
+        urls = data[selectedType] ? data[selectedType].filter(url => url.trim() !== '') : [];
+    }
+    console.log('Filtered URLs:', urls);
+    currentIndex = 0;
+    openNextTab();
+}
     </script>
 </body>
