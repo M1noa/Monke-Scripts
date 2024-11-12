@@ -18,7 +18,6 @@
     <script>
         let urls = [];
         let currentIndex = 0;
-        let tabOpened = false;
         let genres = [];
 
         // Fetch all genres and URLs
@@ -65,101 +64,31 @@
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
 
-        // Open URLs in new tabs
+        // Open all URLs in new tabs with 2-second delay between each
         function openNewTabs() {
             if (urls.length === 0) {
                 console.log('No URLs to open.');
                 return;
             }
-            openNextTab();
+            openAllTabsWithDelay();
         }
 
-        // Open the next URL
-        function openNextTab() {
+        // Open URLs with 2-second delay between them
+        function openAllTabsWithDelay() {
             if (currentIndex < urls.length) {
                 const url = urls[currentIndex];
-                console.log(`Processing URL: ${url}`);
+                console.log(`Opening URL: ${url}`);
+                window.open(url, "_blank");
                 currentIndex++;
-                if (isTampermonkeyLink(url)) {
-                    console.log(`Checking Tampermonkey installation for URL: ${url}`);
-                    checkTampermonkeyInstallation(url);
-                } else {
-                    console.log(`URL is not a Tampermonkey link. Opening: ${url}`);
-                    window.open(url, "_blank");
-                    tabOpened = true;
-                }
+                setTimeout(openAllTabsWithDelay, 2250); // 2.25-second delay
             } else {
                 console.log('All URLs processed.');
             }
         }
 
-        function checkTampermonkeyInstallation(url) {
-            waitForExternalTm(function(tm) {
-                const scriptName = extractScriptName(url); 
-                const scriptNamespace = extractScriptNamespace(url); 
-                
-                console.log(`Checking if script "${scriptName}" from "${scriptNamespace}" is installed...`);
-                tm.isInstalled(scriptName, scriptNamespace, function(result) {
-                    if (result.installed) {
-                        console.log(`Script "${scriptName}" is already installed.`);
-                        tabOpened = false;
-                        openNextTab();
-                    } else {
-                        console.log(`Script "${scriptName}" is not installed. Opening URL: ${url}`);
-                        window.open(url, "_blank");
-                        tabOpened = true;
-                    }
-                });
-            });
-        }
-
-        function isTampermonkeyLink(url) {
-            const tampermonkeyDomains = ['tampermonkey.net', 'greasyfork.org', 'openuserjs.org'];
-            return tampermonkeyDomains.some(domain => url.includes(domain));
-        }
-
-        function extractScriptName(url) {
-            const urlObj = new URL(url);
-            const pathSegments = urlObj.pathname.split('/');
-            const scriptName = pathSegments[pathSegments.length - 1];
-            return scriptName.split('?')[0];
-        }
-
-        function extractScriptNamespace(url) {
-            const urlObj = new URL(url);
-            return urlObj.origin;
-        }
-
-        function waitForExternalTm(cb) {
-            let external, tm;
-            if (!(external = window.external)) {
-                console.log('Tampermonkey not found in window.external.');
-                return false;
-            } else {
-                if ((tm = external.Tampermonkey)) {
-                    console.log('Tampermonkey found.');
-                    cb(tm);
-                } else {
-                    console.log('Tampermonkey not immediately available, retrying...');
-                    window.setTimeout(function() {
-                        if ((tm = external.Tampermonkey)) {
-                            console.log('Tampermonkey found on retry.');
-                            cb(tm);
-                        } else {
-                            console.log('Tampermonkey not found after retry.');
-                            tabOpened = false;
-                            openNextTab();
-                        }
-                    }, 1000);
-                }
-            }
-        }
-
         document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'visible' && tabOpened) {
-                console.log('Tab is visible again, opening next URL...');
-                openNextTab();
-                tabOpened = false;
+            if (document.visibilityState === 'visible') {
+                console.log('Tab is visible again...');
             }
         });
 
