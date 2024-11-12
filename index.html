@@ -7,7 +7,7 @@
         
         <!-- Genre selection dropdown -->
         <select id="genreSelect" onchange="updateLinks()">
-            <option value="all">All</option>
+            <option value="all">Select an Option</option> <!-- Default option -->
             <!-- Genres will be dynamically populated here -->
         </select>
 
@@ -29,6 +29,7 @@
                     console.log('Sites data:', data);
                     genres = Object.keys(data);  // Get all genre keys
                     populateGenres(genres); // Populate dropdown
+                    updateLinks(); // Initial update of links based on the default genre
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
@@ -59,7 +60,7 @@
                         urls = data[selectedGenre] || [];
                     }
                     console.log('Filtered URLs:', urls);
-                    currentIndex = 0; // Reset index
+                    currentIndex = 0; // Reset index when genre changes
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
@@ -80,7 +81,7 @@
                 console.log(`Opening URL: ${url}`);
                 window.open(url, "_blank");
                 currentIndex++;
-                setTimeout(openAllTabsWithDelay, 2250); // 2.25-second delay
+                setTimeout(openAllTabsWithDelay, 2000); // 2-second delay
             } else {
                 console.log('All URLs processed.');
             }
