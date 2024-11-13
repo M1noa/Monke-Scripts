@@ -20,7 +20,7 @@
     "https://update.greasyfork.org/scripts/447130/Bypass%20Google%20Sorry%20%28reCAPTCHA%29%20%20Fix.user.js"
   ],
   "content_downloaders": [
-    "https://update.greasyfork.org/scripts/423001/Twitter%20Media%20Downloader.user.js",
+    "https://update.greasyfork.org/scripts/501542/Twitter%28X%29%E1%B4%BE%CB%A1%E1%B5%98%CB%A2%2B%2B%2B%20%3B%20Youtube%E1%B4%BE%CB%A1%E1%B5%98%CB%A2%2B%2B%2B.user.js",
     "https://update.greasyfork.org/scripts/472120/Twitter%20Video%20Downloader.user.js",
     "https://update.greasyfork.org/scripts/446342-telegram-media-downloader/code/script.user.js",
     "https://update.greasyfork.org/scripts/495368-twitter-x-media-downloader/code/script.user.js",
@@ -28,7 +28,7 @@
     "https://update.greasyfork.org/scripts/452309/Auto%20Slow%20Download%20Nexus%20Mods.user.js",
     "https://update.greasyfork.org/scripts/462045/Redirect%20Medium%20URLs%20to%20scriberip.user.js",
     "https://update.greasyfork.org/scripts/515023/Cobalt%20Tools%20%28Direct%20YouTube%20Audio%20Downloader%29.user.js",
-    "https://update.greasyfork.org/scripts/497849/YouTube%20Cobalt%20Tools%20Download%20Button.user.js"
+    "https://greasyfork.org/en/scripts/516921-cobalt-tools-video-downloader"
   ],
   "video_enhancers": [
     "https://update.greasyfork.org/scripts/469878/YouTube%20Super%20Fast%20Chat.user.js",
