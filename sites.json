@@ -16,8 +16,7 @@
     "https://github.com/LegeBeker/bypass-paywalls-tampermonkey/raw/master/bypass-paywalls-tampermonkey.user.js",
     "https://update.greasyfork.org/scripts/475314/Bypass%20Paywall.user.js",
     "https://update.greasyfork.org/scripts/35521/Bypass%20paywalls%20for%20scientific%20documents.user.js",
-    "https://update.greasyfork.org/scripts/441034/The%20New%20York%20Times%20Paywall%20Bypass.user.js",
-    "https://update.greasyfork.org/scripts/447130/Bypass%20Google%20Sorry%20%28reCAPTCHA%29%20%20Fix.user.js"
+    "https://update.greasyfork.org/scripts/441034/The%20New%20York%20Times%20Paywall%20Bypass.user.js"
   ],
   "content_downloaders": [
     "https://update.greasyfork.org/scripts/501542/Twitter%28X%29%E1%B4%BE%CB%A1%E1%B5%98%CB%A2%2B%2B%2B%20%3B%20Youtube%E1%B4%BE%CB%A1%E1%B5%98%CB%A2%2B%2B%2B.user.js",
