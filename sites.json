@@ -80,6 +80,8 @@
     "https://update.greasyfork.org/scripts/499872/Trakt%20VIP%20Adblocker.user.js",
     "https://update.greasyfork.org/scripts/440199-dismiss-cookies-warning/code/script.user.js",
     "https://update.greasyfork.org/scripts/439247/netfix.user.js",
-    "https://update.greasyfork.org/scripts/371328/Mute%20Netflix%20Autoplay%20Trailers.user.js"
+    "https://update.greasyfork.org/scripts/371328/Mute%20Netflix%20Autoplay%20Trailers.user.js",
+    "https://update.greasyfork.org/scripts/442176/Hide%20IP%20and%20ISP%20-%20speedtestnet.user.js",
+    "https://update.greasyfork.org/scripts/428315/SpeedTest%20%28Automatic%29.user.js"
   ]
 }
