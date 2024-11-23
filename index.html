@@ -1,18 +1,43 @@
-<link rel="stylesheet" href="style.css">
-<title>Good Monke Scripts</title>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Good Monke Scripts</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            color: #333;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .install-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .install-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <h1 class="header">Needed Scripts</h1>
         
-        <!-- Genre selection dropdown -->
         <select id="genreSelect" onchange="updateLinks()">
             <option value="">Select an Option</option>
-            <option value="all">all</option> <!-- Default option -->
-            <!-- Genres will be dynamically populated here -->
+            <option value="all">all</option>
         </select>
-
-        <button class="install-button" onclick="openNewTabs()">Install</button>
+        <button class="install-button" onclick="openNewTabs()">Install Missing Scripts</button>
         <p>go to Settings -> in "General", change config mode to Advanced -> scroll to "Downloads BETA" and change Download Mode to Browser API</p>
     </div>
 
@@ -20,33 +45,58 @@
         let urls = [];
         let currentIndex = 0;
         let genres = [];
+        let scriptMap = new Map();  // Maps URLs to script names/namespaces
 
-        // Fetch all genres and URLs
+        async function checkScriptInstalled(scriptInfo) {
+            try {
+                // Try different userscript manager detection methods
+                if (typeof GM_info !== 'undefined') {
+                    const info = GM_info;
+                    if (info && info.script) {
+                        return info.script.name === scriptInfo.name && 
+                               info.script.namespace === scriptInfo.namespace;
+                    }
+                }
+                
+                if (typeof GM !== 'undefined' && GM.info) {
+                    const info = await GM.info;
+                    if (info && info.script) {
+                        return info.script.name === scriptInfo.name && 
+                               info.script.namespace === scriptInfo.namespace;
+                    }
+                }
+                
+                // If we can't detect userscript manager or script info
+                return false;
+            } catch (e) {
+                console.error('Error checking script:', e);
+                return false;  // On error, we'll try to install
+            }
+        }
+
         function fetchSites() {
             console.log('Fetching sites.json...');
             fetch('sites.json')
                 .then(response => response.json())
                 .then(data => {
                     console.log('Sites data:', data);
-                    genres = Object.keys(data);  // Get all genre keys
-                    populateGenres(genres); // Populate dropdown
-                    updateLinks(); // Initial update of links based on the default genre
+                    genres = Object.keys(data);
+                    populateGenres(genres);
+                    updateLinks();
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
 
-        // Populate genre dropdown
         function populateGenres(genres) {
             const genreSelect = document.getElementById("genreSelect");
             genres.forEach(genre => {
                 const option = document.createElement("option");
                 option.value = genre;
-                option.textContent = genre.replace(/_/g, ' ').toUpperCase(); // Capitalize genres
+                option.textContent = genre.replace(/_/g, ' ').toUpperCase();
                 genreSelect.appendChild(option);
             });
         }
 
-        // Update URLs based on selected genre
         function updateLinks() {
             const selectedGenre = document.getElementById("genreSelect").value;
             console.log(`Selected genre: ${selectedGenre}`);
@@ -54,48 +104,70 @@
                 .then(response => response.json())
                 .then(data => {
                     if (selectedGenre === 'all') {
-                        // Fetch all URLs if 'All' is selected
                         urls = Object.values(data).flat();
                     } else {
-                        // Fetch URLs for the selected genre
                         urls = data[selectedGenre] || [];
                     }
                     console.log('Filtered URLs:', urls);
-                    currentIndex = 0; // Reset index when genre changes
+                    currentIndex = 0;
                 })
                 .catch(error => console.error('Error fetching sites.json:', error));
         }
 
-        // Open all URLs in new tabs with 2-second delay between each
-        function openNewTabs() {
+        async function openNewTabs() {
             if (urls.length === 0) {
                 console.log('No URLs to open.');
                 return;
             }
-            openAllTabsWithDelay();
+            openNextTab();
         }
 
-        // Open URLs with 2-second delay between them
-        function openAllTabsWithDelay() {
+        async function openNextTab() {
             if (currentIndex < urls.length) {
                 const url = urls[currentIndex];
-                console.log(`Opening URL: ${url}`);
-                window.open(url, "_blank");
+                
+                // Try to fetch the script metadata first
+                try {
+                    const response = await fetch(url);
+                    const text = await response.text();
+                    
+                    // Extract @name and @namespace from the script
+                    const nameMatch = text.match(/@name\s+(.+)/);
+                    const namespaceMatch = text.match(/@namespace\s+(.+)/);
+                    
+                    if (nameMatch && namespaceMatch) {
+                        const scriptInfo = {
+                            name: nameMatch[1].trim(),
+                            namespace: namespaceMatch[1].trim()
+                        };
+                        
+                        // Only open if script isn't already installed
+                        const isInstalled = await checkScriptInstalled(scriptInfo);
+                        if (!isInstalled) {
+                            console.log(`Opening URL: ${url}`);
+                            window.open(url, "_blank");
+                        } else {
+                            console.log(`Script ${scriptInfo.name} already installed, skipping...`);
+                        }
+                    } else {
+                        // If we can't parse the script metadata, open it anyway
+                        console.log(`Cannot parse script metadata, opening URL: ${url}`);
+                        window.open(url, "_blank");
+                    }
+                } catch (e) {
+                    console.error('Error checking script:', e);
+                    // On error, try to install anyway
+                    window.open(url, "_blank");
+                }
+                
                 currentIndex++;
-                setTimeout(openAllTabsWithDelay, 555); // 0.555-second delay
+                setTimeout(openNextTab, 600);
             } else {
                 console.log('All URLs processed.');
             }
         }
 
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'visible') {
-                console.log('Tab is visible again...');
-            }
-        });
-
-        // Fetch the genres and sites when the page loads
         window.onload = fetchSites;
-
     </script>
 </body>
+</html>
