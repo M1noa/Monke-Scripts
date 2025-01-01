@@ -88,7 +88,8 @@
     "https://update.greasyfork.org/scripts/421603/Magic%20Userscript%2B%20%3A%20Show%20Site%20All%20UserJS.user.js",
     "https://update.greasyfork.org/scripts/23840/Greasyfork%20Search%20with%20Sleazyfork%20Results%20include.user.js",
     "https://update.greasyfork.org/scripts/436913/Greasy%20Fork%20Dark%20Theme.user.js",
-    "https://update.greasyfork.org/scripts/518152/GreasyforkSleazyfork%20User%20Stats%20Display.user.js"
+    "https://update.greasyfork.org/scripts/518152/GreasyforkSleazyfork%20User%20Stats%20Display.user.js",
+    "https://update.greasyfork.org/scripts/407457/Youtube Playlist Duration Calculator.user.js"
   ],
   "nsfw_enhancements": [
     "https://update.sleazyfork.org/scripts/452409/Restore%20Removed%20Posts.user.js",
