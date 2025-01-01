@@ -10,7 +10,8 @@
     "https://update.greasyfork.org/scripts/492893/Toolssnet%20Bypass.user.js",
     "https://update.greasyfork.org/scripts/483207/%5BWorking%5D%20loot-linkcom%20bypasser%20%28includes%20all%20lootlabsgg%20link%20variations%29.user.js",
     "https://update.greasyfork.org/scripts/493648/ashrfd%20bypass.user.js",
-    "https://update.greasyfork.org/scripts/443277/Bypass%20Pahe%20Links.user.js"
+    "https://update.greasyfork.org/scripts/443277/Bypass%20Pahe%20Links.user.js",
+    "https://api2.adbypass.org/userscript/download/bypass.user.js"
   ],
   "paywall_bypasses": [
     "https://github.com/LegeBeker/bypass-paywalls-tampermonkey/raw/master/bypass-paywalls-tampermonkey.user.js",
