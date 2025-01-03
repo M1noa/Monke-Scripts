@@ -12,7 +12,10 @@
     "https://update.greasyfork.org/scripts/493648/ashrfd%20bypass.user.js",
     "https://update.greasyfork.org/scripts/443277/Bypass%20Pahe%20Links.user.js",
     "https://api2.adbypass.org/userscript/download/bypass.user.js",
-    "https://github.com/bypass-vip/userscript/raw/refs/heads/main/bypass-vip.user.js"
+    "https://github.com/bypass-vip/userscript/raw/refs/heads/main/bypass-vip.user.js",
+    "https://update.greasyfork.org/scripts/508629/Twitch%20Turbo%20%2B%20Updated.user.js",
+    "https://update.greasyfork.org/scripts/516921/Cobalt%20Tools%20Video%20Downloader.user.js",
+    "https://update.greasyfork.org/scripts/512376/Remove%20ads%20Twitch.user.js"
   ],
   "paywall_bypasses": [
     "https://github.com/LegeBeker/bypass-paywalls-tampermonkey/raw/master/bypass-paywalls-tampermonkey.user.js",
