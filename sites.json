@@ -54,7 +54,9 @@
     "https://update.greasyfork.org/scripts/420972/Hulu%20Logo%20Remover.user.js",
     "https://update.greasyfork.org/scripts/386135/Skip%20Hulu%20Ads%20and%20Outros.user.js",
     "https://update.greasyfork.org/scripts/478739/Netflix%20Plus.user.js",
-    "https://update.greasyfork.org/scripts/475862/No%20Error%20in%20DevTools%20for%20Ads%20Block.user.js"
+    "https://update.greasyfork.org/scripts/475862/No%20Error%20in%20DevTools%20for%20Ads%20Block.user.js",
+    "https://update.greasyfork.org/scripts/464719/Clean%20Twitter.user.js",
+    
   ],
   "character_ai_enhancements": [
     "https://update.greasyfork.org/scripts/468233/CAI%20Token.user.js",
@@ -62,7 +64,8 @@
     "https://update.greasyfork.org/scripts/462589/CAI%20Unlisted%20Interactions.user.js",
     "https://update.greasyfork.org/scripts/458400/Reload%20%20autoscroll%20buttons%20at%20characterai.user.js",
     "https://update.greasyfork.org/scripts/498701/Characterai%20Enhancements.user.js",
-    "https://update.greasyfork.org/scripts/490682/Download%20characterai%20chat.user.js"
+    "https://update.greasyfork.org/scripts/490682/Download%20characterai%20chat.user.js",
+    "https://greasyfork.org/en/scripts/498115-twitter-kaizen"
   ],
   "social_media_tools": [
     "https://update.greasyfork.org/scripts/488635/Twitter%20Auto%20Unmute%20Videos.user.js",
