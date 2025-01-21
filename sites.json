@@ -95,7 +95,16 @@
     "https://update.greasyfork.org/scripts/23840/Greasyfork%20Search%20with%20Sleazyfork%20Results%20include.user.js",
     "https://update.greasyfork.org/scripts/436913/Greasy%20Fork%20Dark%20Theme.user.js",
     "https://update.greasyfork.org/scripts/518152/GreasyforkSleazyfork%20User%20Stats%20Display.user.js",
-    "https://update.greasyfork.org/scripts/407457/Youtube Playlist Duration Calculator.user.js"
+    "https://update.greasyfork.org/scripts/407457/Youtube Playlist Duration Calculator.user.js",
+    "https://update.greasyfork.org/scripts/510742/GitHub%20Plus.user.js",
+    "https://update.greasyfork.org/scripts/505501/Github%20Copy%20Raw%20File%20URL%20and%20Download%20File.user.js",
+    "https://update.greasyfork.org/scripts/496406/GitHub%20Useful%20Forks.user.js",
+    "https://update.greasyfork.org/scripts/493/Github%20Comment%20Enhancer.user.js",
+    "https://update.greasyfork.org/scripts/521510/GitHub%20Upload%20Button%20for%20Subfolders.user.js",
+    "https://update.greasyfork.org/scripts/471272/Github%20%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87%E4%B8%BB%E9%A2%98.user.js",
+    "https://update.greasyfork.org/scripts/511315/%5BNew%5D%20GitHub%20Downloads%20Counter.user.js",
+    "https://update.greasyfork.org/scripts/520209/GitHub%20Repo%20File%20Downloader.user.js",
+    "https://update.greasyfork.org/scripts/505496/GitHub%20Folder%20Downloader.user.js"
   ],
   "nsfw_enhancements": [
     "https://update.sleazyfork.org/scripts/452409/Restore%20Removed%20Posts.user.js",
