@@ -55,7 +55,8 @@
     "https://update.greasyfork.org/scripts/29403/script.user.js",
     "https://update.greasyfork.org/scripts/522466/Better%20Theater%20Mode%20for%20YouTube.user.js",
     "https://update.greasyfork.org/scripts/487115/Youtube%20Ambient%20Pro%20%2B.user.js",
-    "https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.user.js"
+    "https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.user.js",
+    "https://update.greasyfork.org/scripts/522166/DoorDash%20fees%20buster.user.js"
   ],
   "media_enhancements": [
     "https://update.greasyfork.org/scripts/420475/Netflix%20Marathon%20%28Pausable%29.user.js",
