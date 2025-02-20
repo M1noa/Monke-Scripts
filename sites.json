@@ -65,8 +65,7 @@
     "https://update.greasyfork.org/scripts/386135/Skip%20Hulu%20Ads%20and%20Outros.user.js",
     "https://update.greasyfork.org/scripts/478739/Netflix%20Plus.user.js",
     "https://update.greasyfork.org/scripts/475862/No%20Error%20in%20DevTools%20for%20Ads%20Block.user.js",
-    "https://update.greasyfork.org/scripts/464719/Clean%20Twitter.user.js",
-    
+    "https://update.greasyfork.org/scripts/464719/Clean%20Twitter.user.js"
   ],
   "character_ai_enhancements": [
     "https://update.greasyfork.org/scripts/468233/CAI%20Token.user.js",
@@ -113,7 +112,8 @@
     "https://update.greasyfork.org/scripts/471272/Github%20%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87%E4%B8%BB%E9%A2%98.user.js",
     "https://update.greasyfork.org/scripts/511315/%5BNew%5D%20GitHub%20Downloads%20Counter.user.js",
     "https://update.greasyfork.org/scripts/520209/GitHub%20Repo%20File%20Downloader.user.js",
-    "https://update.greasyfork.org/scripts/505496/GitHub%20Folder%20Downloader.user.js"
+    "https://update.greasyfork.org/scripts/505496/GitHub%20Folder%20Downloader.user.js",
+    "https://update.greasyfork.org/scripts/527526/Outlook%20Privacy%20Enhancer.user.js"
   ],
   "nsfw_enhancements": [
     "https://update.sleazyfork.org/scripts/452409/Restore%20Removed%20Posts.user.js",
