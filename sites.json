@@ -69,15 +69,6 @@
     "https://update.greasyfork.org/scripts/475862/No%20Error%20in%20DevTools%20for%20Ads%20Block.user.js",
     "https://update.greasyfork.org/scripts/464719/Clean%20Twitter.user.js"
   ],
-  "character_ai_enhancements": [
-    "https://update.greasyfork.org/scripts/468233/CAI%20Token.user.js",
-    "https://update.greasyfork.org/scripts/459148/Replies%20numbering%20and%20%22bookmarking%22%20at%20characterai.user.js",
-    "https://update.greasyfork.org/scripts/462589/CAI%20Unlisted%20Interactions.user.js",
-    "https://update.greasyfork.org/scripts/458400/Reload%20%20autoscroll%20buttons%20at%20characterai.user.js",
-    "https://update.greasyfork.org/scripts/498701/Characterai%20Enhancements.user.js",
-    "https://update.greasyfork.org/scripts/490682/Download%20characterai%20chat.user.js",
-    "https://greasyfork.org/en/scripts/498115-twitter-kaizen"
-  ],
   "social_media_tools": [
     "https://update.greasyfork.org/scripts/488635/Twitter%20Auto%20Unmute%20Videos.user.js",
     "https://update.greasyfork.org/scripts/447607/MOREtrackers.user.js",
@@ -114,7 +105,15 @@
     "https://update.greasyfork.org/scripts/511315/%5BNew%5D%20GitHub%20Downloads%20Counter.user.js",
     "https://update.greasyfork.org/scripts/520209/GitHub%20Repo%20File%20Downloader.user.js",
     "https://update.greasyfork.org/scripts/505496/GitHub%20Folder%20Downloader.user.js",
-    "https://update.greasyfork.org/scripts/527526/Outlook%20Privacy%20Enhancer.user.js"
+    "https://update.greasyfork.org/scripts/527526/Outlook%20Privacy%20Enhancer.user.js",
+    "https://update.greasyfork.org/scripts/476527/Fandom%20Redirect.user.js",
+    "https://update.greasyfork.org/scripts/468233/CAI%20Token.user.js",
+    "https://update.greasyfork.org/scripts/459148/Replies%20numbering%20and%20%22bookmarking%22%20at%20characterai.user.js",
+    "https://update.greasyfork.org/scripts/462589/CAI%20Unlisted%20Interactions.user.js",
+    "https://update.greasyfork.org/scripts/458400/Reload%20%20autoscroll%20buttons%20at%20characterai.user.js",
+    "https://update.greasyfork.org/scripts/498701/Characterai%20Enhancements.user.js",
+    "https://update.greasyfork.org/scripts/490682/Download%20characterai%20chat.user.js",
+    "https://greasyfork.org/en/scripts/498115-twitter-kaizen"
   ],
   "nsfw_enhancements": [
     "https://update.sleazyfork.org/scripts/452409/Restore%20Removed%20Posts.user.js",
@@ -138,6 +137,7 @@
     "https://update.greasyfork.org/scripts/11134/Google%20Improved.user.js",
     "https://update.greasyfork.org/scripts/4646/Google%20direct%20Link.user.js",
     "https://update.greasyfork.org/scripts/7543/Google%20Search%20Extra%20Buttons.user.js",
-    "https://update.greasyfork.org/scripts/31256/Google%20Search%20Various%20Ranges.user.js"
+    "https://update.greasyfork.org/scripts/31256/Google%20Search%20Various%20Ranges.user.js",
+    "https://greasyfork.org/en/scripts/532255-janitorai-enhanced-ui-with-css-toggle-and-auto-pagination"
   ]
 }
