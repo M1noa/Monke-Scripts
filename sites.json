@@ -58,7 +58,9 @@
     "https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.user.js",
     "https://update.greasyfork.org/scripts/522166/DoorDash%20fees%20buster.user.js",
     "https://greasyfork.org/scripts/528660-fmhy-safelink-guard/code/script.user.js",
-    "https://greasyfork.org/scripts/485772-fmhy-base64-auto-decoder/code/script.user.js"
+    "https://greasyfork.org/scripts/485772-fmhy-base64-auto-decoder/code/script.user.js",
+    "https://greasyfork.org/scripts/525908-deepseek-redesign/code/script.user.js",
+    "https://greasyfork.org/scripts/524535-deepseek-code-artifact/code/script.user.js"
   ],
   "media_enhancements": [
     "https://update.greasyfork.org/scripts/420475/Netflix%20Marathon%20%28Pausable%29.user.js",
@@ -113,7 +115,10 @@
     "https://update.greasyfork.org/scripts/458400/Reload%20%20autoscroll%20buttons%20at%20characterai.user.js",
     "https://update.greasyfork.org/scripts/498701/Characterai%20Enhancements.user.js",
     "https://update.greasyfork.org/scripts/490682/Download%20characterai%20chat.user.js",
-    "https://greasyfork.org/en/scripts/498115-twitter-kaizen"
+    "https://update.greasyfork.org/scripts/498115/Twitter%20kaizen.user.js",
+    "https://greasyfork.org/scripts/532221-deepseek-shortcuts/code/script.user.js",
+    "https://greasyfork.org/scripts/524537-deepseek-wide-mode/code/script.user.js",
+    "https://greasyfork.org/scripts/525608-deepseeker/code/script.user.js"
   ],
   "nsfw_enhancements": [
     "https://update.sleazyfork.org/scripts/452409/Restore%20Removed%20Posts.user.js",
