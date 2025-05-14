@@ -118,7 +118,8 @@
     "https://update.greasyfork.org/scripts/498115/Twitter%20kaizen.user.js",
     "https://greasyfork.org/scripts/532221-deepseek-shortcuts/code/script.user.js",
     "https://greasyfork.org/scripts/524537-deepseek-wide-mode/code/script.user.js",
-    "https://greasyfork.org/scripts/525608-deepseeker/code/script.user.js"
+    "https://greasyfork.org/scripts/525608-deepseeker/code/script.user.js",
+    "https://update.greasyfork.org/scripts/467663/PvPRP%20Auto-Download.user.js"
   ],
   "nsfw_enhancements": [
     "https://update.sleazyfork.org/scripts/452409/Restore%20Removed%20Posts.user.js",
