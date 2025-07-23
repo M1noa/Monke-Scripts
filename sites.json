@@ -78,7 +78,10 @@
     "https://update.greasyfork.org/scripts/493645/Magnet%20Links%20on%20YTS.user.js",
     "https://update.greasyfork.org/scripts/377574/Redirect%20old%20Nexus%20Mods%20links.user.js",
     "https://update.greasyfork.org/scripts/439247/netfix.user.js",
-    "https://update.greasyfork.org/scripts/416704/Twitch%20Latency%20Overlay%20%28NON%20EMBEDDED%29.user.js"
+    "https://update.greasyfork.org/scripts/416704/Twitch%20Latency%20Overlay%20%28NON%20EMBEDDED%29.user.js",
+    "https://update.greasyfork.org/scripts/529984/Twitch%20Auto%20Channel%20Points%20Claimer%20Redux.user.js",
+    "https://update.greasyfork.org/scripts/474799/Twitch%20%E8%87%AA%E5%8B%95%E9%A0%98%E5%8F%96%E6%8E%89%E5%AF%B6.user.js",
+    "https://update.greasyfork.org/scripts/375467/Enhance%20twitch.user.js"
   ],
   "file_download_tools": [
     "https://update.greasyfork.org/scripts/500221/%28reupload%29%20slash%27s%20mod%20menu.user.js",
